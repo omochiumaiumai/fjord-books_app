@@ -9,3 +9,7 @@ ja:
         memo: メモ
         picture: 写真
         title: 題名
+
+        new_book: 本を登録する
+        editing_book: 本を編集する
+      books: 図書一覧
