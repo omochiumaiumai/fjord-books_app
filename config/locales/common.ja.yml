@@ -5,3 +5,14 @@ ja:
     show: 詳細
     index: 一覧
     destroy: 削除
+
+  message:
+    notice_create: 作成に成功しました。
+    notice_update: 編集に成功しました。
+    notice_destroy: 削除に成功しました。
+    delete_confirm: 本当に削除しますか？
+
+  views:
+      new: 本を登録する
+      edit: 本を編集する
+      title: 図書一覧
