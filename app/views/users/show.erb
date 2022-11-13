@@ -1,0 +1,19 @@
+<h1><%= User.model_name.human %></h1>
+<p>
+  <strong><%= User.human_attribute_name(:email) %>:</strong>
+  <%= @user.email %>
+</p>
+<p>
+  <strong><%= User.human_attribute_name(:postalcode) %>:</strong>
+  <%= @user.postalcode %>
+</p>
+<p>
+  <strong><%= User.human_attribute_name(:address) %>:</strong>
+  <%= @user.address %>
+</p>
+<p>
+  <strong><%= User.human_attribute_name(:self_introduction) %>:</strong>
+  <%= @user.self_introduction %>
+</p>
+
+<%= link_to_if(@user.email == current_user.email, 'edit', edit_user_registration_path){} %>
