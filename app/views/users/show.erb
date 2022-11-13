@@ -17,3 +17,4 @@
 </p>
 
 <%= link_to_if(@user.email == current_user.email, 'edit', edit_user_registration_path){} %>
+<%= link_to 'back',users_url%>
