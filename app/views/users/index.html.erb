@@ -1,17 +1,17 @@
 
 <h1><%= User.model_name.human %></h1>
-<p><%= User.model_name.human %>: <%= current_user.email%></p>
+<p><%= User.model_name.human %>: <%= current_user.email %></p>
 <table>
   <thead>
     <tr>
-    <th><%= User.human_attribute_name(:email)%></th>
-    <th><%= User.human_attribute_name(:postalcode)%></th>
-    <th><%= User.human_attribute_name(:address)%></th>
+    <th><%= User.human_attribute_name(:email) %></th>
+    <th><%= User.human_attribute_name(:postalcode) %></th>
+    <th><%= User.human_attribute_name(:address) %></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @users.each do |user|%>
+    <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
         <td><%= user.postalcode %></td>
