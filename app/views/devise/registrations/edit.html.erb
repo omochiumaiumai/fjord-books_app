@@ -7,7 +7,7 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-  
+
  <div class="field">
     <%= f.label :postalcode %>
     <%= f.text_field :postalcode %>
@@ -22,7 +22,7 @@
     <%= f.label :self_introduction %>
     <%= f.text_area :self_introduction %>
   </div>
-  
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
   <% end %>
