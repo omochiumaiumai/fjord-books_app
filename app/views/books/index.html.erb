@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= t('views.title') %></h1>
-
+<h1><%= Book.model_name.human %></h1>
 <table>
   <thead>
     <tr>
@@ -30,4 +29,4 @@
 
 <br>
 
-<%= link_to t('views.new'), new_book_path %>
+<%= link_to t('views.new',item: Book.model_name.human), new_book_path %>
