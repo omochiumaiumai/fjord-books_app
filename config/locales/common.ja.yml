@@ -13,6 +13,5 @@ ja:
     delete_confirm: 本当に削除しますか？
 
   views:
-      new: 本を登録する
-      edit: 本を編集する
-      title: 図書一覧
+      new: "%{item}を登録する"
+      edit: "%{item}を編集する"

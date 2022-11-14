@@ -6,6 +6,5 @@ en:
     delete_confirm: Are you sure?
 
   views:
-    new: New book
-    edit: Edit book
-    title: Books
+    new: "New %{item}"
+    edit: "Edit %{item}"
