@@ -1,0 +1,17 @@
+ja:
+  button:
+    edit: 編集
+    back: 戻る
+    show: 詳細
+    index: 一覧
+    destroy: 削除
+
+  message:
+    notice_create: "%{item}の作成に成功しました。"
+    notice_update: "%{item}の編集に成功しました。"
+    notice_destroy: "%{item}の削除に成功しました。"
+    delete_confirm: 本当に削除しますか？
+
+  views:
+      new: "%{item}を登録する"
+      edit: "%{item}を編集する"

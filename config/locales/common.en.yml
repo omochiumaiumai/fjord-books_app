@@ -1,0 +1,10 @@
+en:
+  message:
+    notice_create: "%{item} was successfully created."
+    notice_update: "%{item} was successfully updated."
+    notice_destroy: "%{item} was successfully destroyed."
+    delete_confirm: Are you sure?
+
+  views:
+    new: "New %{item}"
+    edit: "Edit %{item}"
