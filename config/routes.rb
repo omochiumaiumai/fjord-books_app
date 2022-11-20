@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  resources :users
-  devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
-    get '/users' => 'users#index'
-    get '/users/:id' => 'users#show'
-  end
+  resources :users, only: %i(index show)
   resources :books
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
