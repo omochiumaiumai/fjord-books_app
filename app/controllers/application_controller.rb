@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    keys = %i[postalcode address self_introduction]
+    keys = %i[postal_code address self_introduction]
     devise_parameter_sanitizer.permit(:account_update, keys: keys)
   end
 end

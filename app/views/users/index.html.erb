@@ -4,7 +4,7 @@
   <thead>
     <tr>
     <th><%= User.human_attribute_name(:email) %></th>
-    <th><%= User.human_attribute_name(:postalcode) %></th>
+    <th><%= User.human_attribute_name(:postal_code) %></th>
     <th><%= User.human_attribute_name(:address) %></th>
     </tr>
   </thead>
@@ -13,7 +13,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
-        <td><%= user.postalcode %></td>
+        <td><%= user.postal_code %></td>
         <td><%= user.address %></td>
         <td><%= link_to t('views.common.show'), user_path(user) %></td>
       </tr>
