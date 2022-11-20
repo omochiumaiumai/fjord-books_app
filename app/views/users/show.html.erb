@@ -16,5 +16,7 @@
   <%= @user.self_introduction %>
 </p>
 
-<%= link_to_if(@user.email == current_user.email, t('views.common.edit'), edit_user_registration_path) %>
+<% if current_user == @user %>
+  <%= link_to t('views.common.edit'), edit_user_registration_path %>
+<% end %>
 <%= link_to t('views.common.back'),users_url %>
