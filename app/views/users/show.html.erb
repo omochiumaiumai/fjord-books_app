@@ -33,6 +33,17 @@
   <% end %>
 </p>
 
+
+<% if current_user.following?(@user) %>
+  <%= form_with(url: user_follow_relation_path(@user), method: :delete, local: true) do |form| %>
+    <%= form.submit('フォローを外す') %>
+  <% end %>
+<% elsif current_user != @user %>
+  <%= form_with(url: user_follow_relation_path(@user), local: true) do |form| %>
+    <%= form.submit('フォローする') %>
+  <% end %>
+<% end %>
+
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% end %>
