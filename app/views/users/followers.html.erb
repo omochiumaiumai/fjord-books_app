@@ -1,4 +1,4 @@
-<h1>フォロワー</h1>
+<h1><%= t('views.users.followers') %></h1>
 <% @followers.each do |user| %>
   <%= link_to(user.name, user) %>
   <br>

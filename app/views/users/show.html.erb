@@ -34,17 +34,19 @@
 </p>
 
 <p>
-  <%= link_to(@user.followings.count, followings_user_path(@user)) %> フォロー中
-  <%= link_to(@user.followers.count, followers_user_path(@user)) %> フォロワー
+  <%= link_to(@user.followings.count, followings_user_path(@user)) %>
+  <%= t('views.users.followings') %>
+  <%= link_to(@user.followers.count, followers_user_path(@user)) %>
+  <%= t('views.users.followers') %>
 </p>
 
 <% if current_user.following?(@user) %>
   <%= form_with(url: user_follow_relation_path(@user), method: :delete, local: true) do |form| %>
-    <%= form.submit('フォローを外す') %>
+    <%= form.submit t('views.users.unfollow') %>
   <% end %>
 <% elsif current_user != @user %>
   <%= form_with(url: user_follow_relation_path(@user), local: true) do |form| %>
-    <%= form.submit('フォローする') %>
+    <%= form.submit t('views.users.follow') %>
   <% end %>
 <% end %>
 
