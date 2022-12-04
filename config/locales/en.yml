@@ -226,6 +226,11 @@ en:
       title_show: "%{name} Details"
       sign_out: "Sign out"
       minimum_length: "%{length} characters minimum"
+    users:
+      follow: follow
+      unfollow: unfollow
+      followings: followings
+      followers: followers
   controllers:
     common:
       notice_create: "%{name} was successfully created."

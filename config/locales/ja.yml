@@ -225,8 +225,8 @@ ja:
       next: '次'
       truncate: '...'
     users:
-      follow_create: フォローする
-      follow_destroy: フォロー解除
+      follow: フォローする
+      unfollow: フォロー解除
       followings: フォロー中
       followers: フォロワー
   controllers:
