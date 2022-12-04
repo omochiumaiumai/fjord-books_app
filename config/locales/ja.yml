@@ -224,6 +224,11 @@ ja:
       previous: '前'
       next: '次'
       truncate: '...'
+    users:
+      follow_create: フォローする
+      follow_destroy: フォロー解除
+      followings: フォロー中
+      followers: フォロワー
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
