@@ -1,0 +1,6 @@
+<h1>フォロー中</h1>
+<% @followings.each do |user| %>
+  <%= link_to(user.name, user) %>
+  <br>
+<% end%>
+<%= paginate @followings %>
