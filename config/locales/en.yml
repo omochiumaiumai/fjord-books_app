@@ -236,6 +236,9 @@ en:
       notice_create: "%{name} was successfully created."
       notice_update: "%{name} was successfully updated."
       notice_destroy: "%{name} was successfully destroyed."
+    follow_relation:
+      notice_follow: "Followed a user."
+      notice_unfollow: "Unfollowed a user."
   layouts:
     application:
       menu: Menu
