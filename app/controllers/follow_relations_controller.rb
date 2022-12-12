@@ -5,12 +5,12 @@ class FollowRelationsController < ApplicationController
 
   def create
     current_user.follow(@user)
-    redirect_to user_path(@user)
+    redirect_to user_path(@user), notice: t('controllers.follow_relation.notice_follow')
   end
 
   def destroy
     current_user.unfollow(@user)
-    redirect_to user_path(@user)
+    redirect_to user_path(@user), notice: t('controllers.follow_relation.notice_unfollow')
   end
 
   private
