@@ -27,4 +27,6 @@ class User < ApplicationRecord
   def followed?(user)
     passive_relationships.where(follower_id: user.id).exists?
   end
+
+  paginates_per 10
 end
