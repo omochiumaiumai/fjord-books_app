@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :passive_relationships, class_name: 'FollowRelation', foreign_key: :following_id, dependent: :destroy, inverse_of: :following
   has_many :followers, through: :passive_relationships, source: :follower
 
+  paginates_per 10
+
   def follow(user)
     active_relationships.find_or_create_by(following_id: user.id)
   end
@@ -27,6 +29,4 @@ class User < ApplicationRecord
   def followed?(user)
     passive_relationships.where(follower_id: user.id).exists?
   end
-
-  paginates_per 10
 end
