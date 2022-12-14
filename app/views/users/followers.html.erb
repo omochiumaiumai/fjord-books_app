@@ -1,0 +1,8 @@
+<h1><%= t('views.users.followers') %></h1>
+<ul>
+  <% @followers.each do |user| %>
+    <li><%= link_to(user.name, user) %></li>
+  <% end %>
+</ul>
+<%= paginate @followers %>
+<%= link_to t('views.common.back'), @user %>
