@@ -1,0 +1,23 @@
+<h2>Comments</h2>
+<table>
+  <thead>
+    <tr>
+      <th>comment</th>
+      <th>user_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% commentable.comments.order(:id).includes(:user).each do |comment| %>
+      <tr>
+      <td><%= comment.content %></td>
+      <td><%= comment.user.name%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= form_with model: [commentable, commentable.comments.new], local: true do |form| %>
+    <%= form.text_field :content, required: true %>
+    <%= form.submit 'post' %>
+<% end %>
+
