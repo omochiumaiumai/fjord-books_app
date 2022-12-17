@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @report.title %>
@@ -10,7 +8,12 @@
   <%= @report.content %>
 </p>
 
-<%= link_to 'Edit', edit_report_path(@report) %> |
+<p>
+  <% if @report.user == current_user %>
+    <%= link_to 'Edit', edit_report_path(@report) %> |
+    <%= link_to 'Destroy', @report, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</p>
 <%= link_to 'Back', reports_path %>
 
 <%= render 'shared/comments', commentable: @report %>
