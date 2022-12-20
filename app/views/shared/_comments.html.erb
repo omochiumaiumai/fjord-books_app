@@ -3,7 +3,9 @@
   <thead>
     <tr>
       <th>comment</th>
-      <th>user_name</th>
+      <th>User</th>
+      <th>Posting Date</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -11,6 +13,7 @@
       <tr>
       <td><%= comment.content %></td>
       <td><%= comment.user.name%></td>
+      <td><%= l comment.created_at, format: :short %></td>
       </tr>
     <% end %>
   </tbody>
