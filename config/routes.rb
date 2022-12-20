@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'books#index'
   resources :books do
-    resource :comments, only: %i[create destroy update], module: :books
+    resource :comments, only: [:create], module: :books
   end
 
   resources :reports do 
-    resources :comments, only: %i[create destroy update], module: :reports
+    resources :comments, only: [:create], module: :reports
   end 
 
   resources :users, only: %i[index show] do
