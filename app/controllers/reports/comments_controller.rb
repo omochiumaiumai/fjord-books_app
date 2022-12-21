@@ -4,7 +4,7 @@ class Reports::CommentsController < ApplicationController
     comment = report.comments.new(comment_params)
     comment.user = current_user
     comment.save!
-    redirect_to report
+    redirect_to report, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
   end
 
   private
