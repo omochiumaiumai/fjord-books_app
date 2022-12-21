@@ -1,29 +1,33 @@
 <p>
-  <strong>Title:</strong>
+  <strong><%= Report.human_attribute_name(:title) %>:</strong>
   <%= @report.title %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong><%= Report.human_attribute_name(:content) %>:</strong>
   <%= @report.content %>
 </p>
 
 <p>
-  <small>User:</small>
-  <%= @report.user.name %>
+  <strong><%= Report.human_attribute_name(:user) %>:</strong>
+  <% if @report.user.name.empty? %>
+    <%= @report.user.email %>
+  <% else %>
+    <%= @report.user.name %>
+  <% end %>
 </p>
 
 <p>
-  <small>Posting Date:</small>
+  <strong><%= Report.human_attribute_name(:created_time) %>:</strong>
   <%= l @report.created_at, format: :short %>
 </p>
 
 <p>
   <% if @report.user == current_user %>
-    <%= link_to 'Edit', edit_report_path(@report) %> |
-    <%= link_to 'Destroy', @report, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+    <%= link_to t('views.common.destroy'), @report, method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
   <% end %>
 </p>
-<%= link_to 'Back', reports_path %>
+<%= link_to t('views.common.back'), reports_path %>
 
 <%= render 'shared/comments', commentable: @report %>
