@@ -10,13 +10,13 @@
   <tbody>
     <% commentable.comments.order(:id).includes(:user).each do |comment| %>
       <tr>
-      <td><%= comment.content %></td>
-      <% if comment.user.name.empty? %>
-        <td><%= comment.user.email %></td>
-      <% else %>
-        <td><%= comment.user.name %></td>
-      <% end %>
-      <td><%= l comment.created_at, format: :short %></td>
+        <td><%= comment.content %></td>
+        <% if comment.user.name.empty? %>
+          <td><%= comment.user.email %></td>
+        <% else %>
+          <td><%= comment.user.name %></td>
+        <% end %>
+        <td><%= l comment.created_at, format: :short %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,3 @@
     <%= form.text_field :content, required: true %>
     <%= form.submit t('helpers.submit.create') %>
 <% end %>
-
