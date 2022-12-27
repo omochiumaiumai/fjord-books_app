@@ -28,12 +28,16 @@ class ReportsController < ApplicationController
 
   # PATCH/PUT /reports/1 or /reports/1.json
   def update
+    return unless @report.user_id == current_user.id
+
     @report.update(report_params)
     redirect_to report_url(@report), notice: t('controllers.common.notice_update', name: Report.model_name.human)
   end
 
   # DELETE /reports/1 or /reports/1.json
   def destroy
+    return unless @report.user_id == current_user.id
+
     @report.destroy
     redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
   end
