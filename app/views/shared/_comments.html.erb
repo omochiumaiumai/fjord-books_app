@@ -1,0 +1,28 @@
+<h2><%= Comment.model_name.human %></h2>
+<table>
+  <thead>
+    <tr>
+      <th><%= Comment.model_name.human %></th>
+      <th><%= Report.human_attribute_name(:user) %></th>
+      <th><%= Report.human_attribute_name(:created_time) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% commentable.comments.order(:id).includes(:user).each do |comment| %>
+      <tr>
+        <td><%= comment.content %></td>
+        <% if comment.user.name.empty? %>
+          <td><%= comment.user.email %></td>
+        <% else %>
+          <td><%= comment.user.name %></td>
+        <% end %>
+        <td><%= l comment.created_at, format: :short %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= form_with model: [commentable, commentable.comments.new], local: true do |form| %>
+    <%= form.text_field :content, required: true %>
+    <%= form.submit t('helpers.submit.create') %>
+<% end %>
