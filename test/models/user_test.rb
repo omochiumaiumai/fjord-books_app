@@ -3,7 +3,48 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test '#name_or_email' do
+    user = User.new(email: 'alice@example.com', name: '')
+
+    user.name = 'Alice'
+    assert_equal 'Alice', user.name_or_email
+  end
+
+  test '#follow' do
+    alice = users(:Alice)
+    bob = users(:Bob)
+
+    assert_not alice.following?(bob)
+    alice.follow(bob)
+    assert alice.following?(bob)
+  end
+
+  test '#unfollow' do
+    alice = users(:Alice)
+    bob = users(:Bob)
+
+    assert_not alice.following?(bob)
+    alice.follow(bob)
+    assert alice.following?(bob)
+    alice.unfollow(bob)
+    assert_not alice.following?(bob)
+  end
+
+  test '#following?' do
+    alice = users(:Alice)
+    bob = users(:Bob)
+
+    assert_not alice.following?(bob)
+    Relationship.create(following_id: bob.id, follower_id: alice.id)
+    assert alice.following?(bob)
+  end
+
+  test '#followed_by' do
+    alice = users(:Alice)
+    bob = users(:Bob)
+
+    assert_not alice.followed_by?(bob)
+    Relationship.create(following_id: alice.id, follower_id: bob.id)
+    assert alice.followed_by?(bob)
+  end
 end
